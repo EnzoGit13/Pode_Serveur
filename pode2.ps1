@@ -1,6 +1,8 @@
 # Importer le module Pode
 Import-Module Pode
 
+#installation Pode Serveur sur la machine Install-Module -Name Pode -Scope CurrentUser -Force
+
 # Démarrer le serveur Pode
 Start-PodeServer {
 
