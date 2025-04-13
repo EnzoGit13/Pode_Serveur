@@ -7,7 +7,14 @@ Start-PodeServer {
     # Ajouter un endpoint HTTP
     Add-PodeEndpoint -Address * -Port 8080 -Protocol Http
 
+    #Add-PodeEndpoint permet d'ajouter les endpoints pouvant accèder au serveur 
+    #-Address *  toutes les adresses peuvent y accéder 
+    #-Port 8080 Port utilisé pour l'affichage sur site
+    #-Protocol Http Protocole utilisé pour mettre en place le serveur
+
+
     # Route GET sur "/"
+    #cette route permet d'accéder au localhost tout en éxecutant un script powerhsell et en utilisant la méthode post.
     Add-PodeRoute -Method Get -Path '/' -ScriptBlock {
 
         # Infos système
@@ -36,6 +43,7 @@ Start-PodeServer {
         $diskUsagePercent = [math]::Round(($diskUsed / $diskTotal) * 100, 2)
 
         # HTML à renvoyer
+        #integration HTMl qui fera la gestion du site internet.
         $html = @"
         <html>
             <head>
